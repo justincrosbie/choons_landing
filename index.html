@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Choons is a revolutionary music app that connects musicians with fans through authentic reviews and ratings. Discover new music, rate artists, and join the revolution against algorithmic music platforms.">
+    <meta name="keywords" content="music app, music discovery, indie musicians, music reviews, music community, new music, music revolution">
+    <meta name="author" content="Choons">
+    <meta property="og:title" content="Choons - The Music Revolution">
+    <meta property="og:description" content="Discover, rate, and connect with musicians in a community free from algorithms.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://choons.app">
+    <title>Choons - Music Revolution</title>
+    <style>
+        :root {
+            --primary-red: #F43F5E;
+            --primary-purple: #7C3AED;
+            --background: #111827;
+            --surface: #1F2937;
+            --surface-light: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-purple));
+        }
+        
+        header {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, var(--primary-red), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23111827" d="M0,96L48,112C96,128,192,160,288,170.7C384,181,480,171,576,138.7C672,107,768,53,864,42.7C960,32,1056,64,1152,96C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat;
+            background-size: cover;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.3);
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .card p {
+            color: #D1D5DB;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary-red), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, rgba(244, 63, 94, 0.8), rgba(124, 58, 237, 0.8)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            margin-top: 80px;
+            border-radius: 12px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: var(--surface);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .ripple-animation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            opacity: 0.5;
+            z-index: 0;
+            animation: ripple 10s infinite linear;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.2;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0.5;
+            }
+        }
+        
+        .vinyl-record {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #111;
+            position: relative;
+            margin: 0 auto 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: rotate 20s infinite linear;
+        }
+        
+        .vinyl-record::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--surface);
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+        
+        .vinyl-record::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .star-red {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            fill: var(--primary-red);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about {
+                grid-template-columns: 1fr;
+            }
+            
+            .vinyl-record {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="gradient-bg">
+        <div class="ripple-animation"></div>
+        <div class="logo-container">
+            <svg class="logo" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" fill="#111827" stroke="white" stroke-width="2"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#333" stroke-width="1" opacity="0.5"/>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="#333" stroke-width="1" opacity="0.5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="#333" stroke-width="1" opacity="0.5"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="#333" stroke-width="1" opacity="0.5"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="#333" stroke-width="1" opacity="0.5"/>
+                <path d="M100,25 L120,80 L180,80 L130,115 L150,170 L100,135 L50,170 L70,115 L20,80 L80,80 Z" fill="#F43F5E"/>
+                <circle cx="100" cy="100" r="10" fill="#111827"/>
+            </svg>
+            <h1>CHOONS</h1>
+        </div>
+        <div class="header-content">
+            <p class="tagline">A revolution against the algorithm. Music for humans, by humans.</p>
+            <a href="https://choons.app" class="btn btn-primary">JOIN THE REVOLUTION</a>
+        </div>
+        <div class="wave"></div>
+    </header>
+    
+    <section>
+        <div class="card">
+            <h2>What is <span class="gradient-text">Choons</span>?</h2>
+            <p>Choons is a revolutionary music platform that puts power back in the hands of real music lovers and artists. No more faceless algorithms deciding what's worth hearing. No more pay-to-play schemes that favor the already established.</p>
+            <p>With Choons, real people review and rate artists, tracks, and gigs to collectively decide what deserves attention. We're creating a community-driven music ecosystem where quality rises to the top naturally.</p>
+        </div>
+        
+        <h2>How it <span class="gradient-text">Works</span></h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>Discover</h3>
+                <p>Find new music across your favorite genres that has been highly rated by real music lovers, not pushed by algorithms or paid promotions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Rate & Review</h3>
+                <p>Share your thoughts on tracks and gigs. Your honest reviews help great artists get discovered and build their audience organically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎸</div>
+                <h3>Connect</h3>
+                <p>Follow your favorite artists, discover their upcoming gigs, and connect with other music lovers who share your taste.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Stay Updated</h3>
+                <p>Receive notifications when you get reviewed, when artists you follow announce gigs, or when your favorite genres feature new highly-rated tracks.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Who is Choons <span class="gradient-text">For</span>?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Musicians</h3>
+                <p>Get your music in front of genuine fans who are eager to discover new sounds. Receive honest feedback and gain recognition based on your talent—not your marketing budget.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Music Lovers</h3>
+                <p>Discover incredible new artists across genres you love, curated by real people with similar tastes. No more scrolling through endless algorithmic recommendations.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 80px;">
+            <div class="vinyl-record">
+                <svg class="star-red" viewBox="0 0 200 200">
+                    <path d="M100,25 L120,80 L180,80 L130,115 L150,170 L100,135 L50,170 L70,115 L20,80 L80,80 Z" />
+                    <circle cx="100" cy="100" r="10" fill="#111827"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>About the <span class="gradient-text">Creator</span></h2>
+        <div class="about">
+            <img src="/api/placeholder/400/400" alt="Placeholder" class="about-image">
+            <div>
+                <p>I'm an independent developer with a burning passion for music. After years of frustration with how major streaming platforms prioritize commercial success over musical quality, I decided to build something different.</p>
+                <p>Choons is completely bootstrapped—no venture capital, no outside investors demanding profits above all else. This means we're free to focus on what truly matters: creating an authentic platform that serves musicians and music lovers.</p>
+                <p>I built Choons because I believe music discovery should be driven by genuine human connection and appreciation, not by algorithms optimized for engagement metrics and ad revenue.</p>
+                <p>Choons will always be 100% free because music is for everyone.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Ready to Break Free from the Algorithm?</h2>
+            <p class="tagline">Join a community that values real music and real connections.</p>
+            <a href="https://choons.app" class="btn btn-primary">JOIN THE REVOLUTION</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2025 Choons | Made with ❤️ for musicians and music lovers</p>
+    </footer>
+</body>
+</html>
