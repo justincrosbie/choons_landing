@@ -146,6 +146,13 @@
             color: #D1D5DB;
         }
         
+        .subtitle {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #f8f8f8;
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -173,10 +180,44 @@
             color: var(--primary-red);
         }
         
-        .gradient-text {
-            background: linear-gradient(to right, var(--primary-red), var(--primary-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .attention-grabbers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .attention-card {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--primary-red);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .attention-card.musician {
+            border-left-color: var(--primary-purple);
+        }
+        
+        .attention-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .attention-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .attention-card p {
+            margin-bottom: 10px;
+        }
+        
+        .attention-card strong {
+            color: white;
+            font-size: 1.1rem;
         }
         
         .about {
@@ -250,7 +291,7 @@
             margin: 0 auto 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: rotate 20s infinite linear;
-            border: 0px solid white;
+            border: 2px solid white;
         }
         
         .vinyl-record img {
@@ -258,8 +299,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 180px;
+            height: 180px;
             z-index: 2;
         }
         
@@ -290,6 +331,10 @@
                 width: 120px;
                 height: 120px;
             }
+            
+            .attention-grabbers {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -302,6 +347,21 @@
         </div>
         <div class="header-content">
             <p class="tagline">A revolution against the algorithm. Music for humans, by humans.</p>
+            
+            <div class="attention-grabbers">
+                <div class="attention-card music-lover">
+                    <h3>Music Lovers</h3>
+                    <p>Tired of algorithms deciding what you should hear? Drowning in an ocean of mediocre tracks while missing hidden gems?</p>
+                    <p><strong>Discover music that actually deserves to be heard.</strong></p>
+                </div>
+                
+                <div class="attention-card musician">
+                    <h3>Musicians</h3>
+                    <p>Struggling to get noticed in a pay-to-play world? Frustrated that promotion matters more than your music's quality?</p>
+                    <p><strong>Get discovered because your music is good, not because you paid.</strong></p>
+                </div>
+            </div>
+            
             <a href="https://choons.app" class="btn btn-primary">JOIN THE REVOLUTION</a>
         </div>
         <div class="wave"></div>
@@ -310,6 +370,7 @@
     <section>
         <div class="card">
             <h2>What is <span class="gradient-text">Choons</span>?</h2>
+            <p class="subtitle">Choons is about...finding choons, man!</p>
             <p>Choons is a revolutionary music platform that puts power back in the hands of real music lovers and artists. No more faceless algorithms deciding what's worth hearing. No more pay-to-play schemes that favor the already established.</p>
             <p>With Choons, real people review and rate artists, tracks, and gigs to collectively decide what deserves attention. We're creating a community-driven music ecosystem where quality rises to the top naturally.</p>
         </div>
@@ -362,13 +423,12 @@
     <section>
         <h2>About the <span class="gradient-text">Creator</span></h2>
         <div class="about">
-            <img src="me-bugfixing.png" alt="Me fixing a bug in Choons" class="about-image">
+            <img src="me-bugfixing.png" alt="Placeholder" class="about-image">
             <div>
                 <p>I'm an independent developer with a burning passion for music. After years of frustration with how major streaming platforms prioritize commercial success over musical quality, I decided to build something different.</p>
                 <p>Choons is completely bootstrapped—no venture capital, no outside investors demanding profits above all else. This means we're free to focus on what truly matters: creating an authentic platform that serves musicians and music lovers.</p>
                 <p>I built Choons because I believe music discovery should be driven by genuine human connection and appreciation, not by algorithms optimized for engagement metrics and ad revenue.</p>
                 <p>Choons will always be 100% free because music is for everyone.</p>
-                <br><p>That's me there, fixing a bug in Choons</p>
             </div>
         </div>
         
