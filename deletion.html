@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request | Choons</title>
+    <style>
+        :root {
+            --primary-red: #F43F5E;
+            --primary-purple: #7C3AED;
+            --background: #111827;
+            --surface: #1F2937;
+            --surface-light: #374151;
+            --text: #F9FAFB;
+            --text-secondary: #D1D5DB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary-red), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: var(--primary-red);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 10px;
+            color: var(--text);
+        }
+        
+        p, ul, ol {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            background-color: var(--surface);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            margin-top: 0;
+        }
+        
+        .updated-date {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            background-color: var(--surface-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--surface-light);
+            color: var(--text-secondary);
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .button:hover {
+            background-color: #E11D48;
+            text-decoration: none;
+        }
+        
+        .method-card {
+            background-color: var(--surface-light);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .method-card h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .method-number {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <svg class="logo" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="90" fill="#111827" stroke="white" stroke-width="2"/>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+                <circle cx="100" cy="100" r="70" fill="none" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+                <path d="M 100,10 L 118.21,66.18 L 179.39,66.19 L 130.59,100.62 L 148.78,156.81 L 100,122.38 L 51.22,156.81 L 69.41,100.62 L 20.61,66.19 L 81.79,66.18 Z" fill="#F43F5E"/>
+                <circle cx="100" cy="100" r="10" fill="#111827" stroke="white" stroke-width="1"/>
+            </svg>
+            <h1>Data Deletion Request</h1>
+        </header>
+        
+        <p class="updated-date">Last Updated: April 21, 2025</p>
+        
+        <div class="section">
+            <h2>Your Data Privacy Rights</h2>
+            <p>At Choons, we respect your right to control your personal data. We've created this page to explain how you can request the deletion of your personal information from our platform.</p>
+            <p>In accordance with various data protection regulations (including GDPR, CCPA, and others), we provide multiple methods for you to request the deletion of your personal data from Choons.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Ways to Delete Your Data</h2>
+            <p>You can request deletion of your personal data in several ways:</p>
+            
+            <div class="method-card">
+                <h3><span class="method-number">1</span> Delete Your Account Within the App</h3>
+                <p>The simplest way to remove your data is to delete your account directly from the Choons app:</p>
+                <ol>
+                    <li>Log in to your Choons account</li>
+                    <li>Go to your Profile</li>
+                    <li>Tap on "Settings" (gear icon)</li>
+                    <li>Scroll down and select "Account"</li>
+                    <li>Tap on "Delete Account"</li>
+                    <li>Follow the confirmation steps</li>
+                </ol>
+                <p>This process will permanently delete your account and personal information after a 30-day grace period, during which you can log back in to cancel the deletion if you change your mind.</p>
+            </div>
+            
+            <div class="method-card">
+                <h3><span class="method-number">2</span> Submit a Deletion Request Form</h3>
+                <p>If you're unable to access your account or prefer an alternative method, you can submit a data deletion request using our online form:</p>
+                <a href="https://choons.app/deletion-request" class="button">Access Deletion Request Form</a>
+                <p>Please note that for security reasons, we'll need to verify your identity before processing your request. This helps us ensure we're deleting the right person's data.</p>
+            </div>
+            
+            <div class="method-card">
+                <h3><span class="method-number">3</span> Email Us Directly</h3>
+                <p>You can also send an email to <a href="mailto:privacy@choons.app">privacy@choons.app</a> with the subject line "Data Deletion Request" and include:</p>
+                <ul>
+                    <li>Your full name</li>
+                    <li>The email address associated with your Choons account</li>
+                    <li>Any other information that can help us identify your account</li>
+                </ul>
+                <p>Our privacy team will respond to your request within 14 business days.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>What Data Gets Deleted</h2>
+            <p>When you request data deletion, we will delete or anonymize:</p>
+            <ul>
+                <li>Your profile information (name, email, profile picture, bio)</li>
+                <li>Your login credentials</li>
+                <li>Your music preferences and listening history</li>
+                <li>Connection data with third-party services (Spotify, Google, etc.)</li>
+                <li>Any content you've created including reviews, ratings, and comments</li>
+                <li>Messages and communications</li>
+                <li>Device information and app usage data</li>
+            </ul>
+            
+            <h3>Data We May Retain</h3>
+            <p>Certain information may be retained even after account deletion:</p>
+            <ul>
+                <li>Aggregated, anonymized data that cannot be linked back to you</li>
+                <li>Information necessary for legal compliance or legitimate business purposes</li>
+                <li>Records of transactions (if any) as required by law</li>
+                <li>Content that others have created that references or involves you (although your identity will be anonymized)</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Data Deletion Timeline</h2>
+            <p>When you request data deletion:</p>
+            <ul>
+                <li>We'll begin processing your request within 14 business days</li>
+                <li>Your account will enter a 30-day deactivation period where it's not visible to other users</li>
+                <li>After the 30-day period, your personal data will be permanently deleted from our active systems</li>
+                <li>Backup systems may retain copies of your data for up to 90 days</li>
+            </ul>
+            <p>We'll send you a confirmation email once your data has been deleted from our active systems.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Third-Party Connections</h2>
+            <p>If you connected your Choons account with third-party services (such as Spotify, Google, SoundCloud, or Instagram), deleting your Choons account will:</p>
+            <ul>
+                <li>Revoke Choons' access to those accounts</li>
+                <li>Delete the connection between Choons and those services</li>
+                <li>Remove data imported from those services from our systems</li>
+            </ul>
+            <p>However, you may also need to remove Choons from your authorized apps in those third-party services:</p>
+            <ul>
+                <li><strong>Spotify:</strong> Account > Apps > Revoke Access</li>
+                <li><strong>Google:</strong> Google Account > Security > Third-party apps with account access</li>
+                <li><strong>Instagram:</strong> Settings > Security > Apps and Websites</li>
+                <li><strong>SoundCloud:</strong> Settings > Connections > Applications</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>California Residents</h2>
+            <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). In addition to the deletion methods outlined above, you can also:</p>
+            <ul>
+                <li>Request a copy of your data before deletion</li>
+                <li>Appoint an authorized agent to make a deletion request on your behalf</li>
+            </ul>
+            <p>For more information specific to California residents, please see our <a href="/privacy#california">California Privacy Notice</a>.</p>
+        </div>
+        
+        <div class="section">
+            <h2>European Residents</h2>
+            <p>If you are in the European Economic Area (EEA), United Kingdom, or Switzerland, you have the "right to be forgotten" under the General Data Protection Regulation (GDPR). The deletion processes described above fulfill this right.</p>
+            <p>You also have the right to:</p>
+            <ul>
+                <li>Receive a copy of your data (data portability)</li>
+                <li>Lodge a complaint with your local data protection authority</li>
+            </ul>
+            <p>For more information specific to European residents, please see our <a href="/privacy#europe">European Privacy Notice</a>.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Need Help?</h2>
+            <p>If you have any questions about data deletion or need assistance with your privacy rights, please contact us:</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> privacy@choons.app</p>
+                <p><strong>Website:</strong> <a href="https://getchoons.com">getchoons.com</a></p>
+                <p><strong>Data Protection Officer:</strong> dpo@choons.app</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Choons | Made with ❤️ for musicians and music lovers</p>
+            <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>
